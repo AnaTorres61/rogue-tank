@@ -1,0 +1,112 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/Tank.gd" type="Script" id=1]
+[ext_resource path="res://sprites/tankBody_dark.png" type="Texture" id=2]
+[ext_resource path="res://sprites/tankDark_barrel1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/shotRed.png" type="Texture" id=4]
+[ext_resource path="res://sprites/shotLarge.png" type="Texture" id=5]
+[ext_resource path="res://sprites/shotOrange.png" type="Texture" id=6]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "fire"
+length = 0.4
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("fire:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fire:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 35.5054, 0.349195 ), Vector2( 36.8614, 0.542907 ), Vector2( 41.8979, 0.542907 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("fire:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[node name="Tank" type="KinematicBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 6
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform" ]
+bodie = 2
+barrel = 0
+
+[node name="poly" type="CollisionPolygon2D" parent="." index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -13.5015, -18.3235, -19.3397, -14.1941, -19.4821, 14.4275, -13.5015, 17.5602, 12.4146, 17.7026, 18.5376, 14.4275, 18.5376, -14.4789, 12.557, -18.3235 )
+
+[node name="sprite" type="Sprite" parent="." index="1"]
+
+position = Vector2( -0.487493, -0.362139 )
+rotation = 1.5708
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="barrel" type="Node2D" parent="." index="2"]
+
+position = Vector2( 0, -0.540359 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="sprite" type="Sprite" parent="barrel" index="0"]
+
+rotation = 1.5708
+texture = ExtResource( 3 )
+offset = Vector2( 0.0512048, -7.96756 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="muzzle" type="Position2D" parent="barrel" index="1"]
+
+position = Vector2( 29.2237, 0.409805 )
+
+[node name="fire" type="Sprite" parent="barrel" index="2"]
+
+visible = false
+position = Vector2( 41.8979, 0.542907 )
+rotation = -1.5708
+z_index = 10
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="anim" type="AnimationPlayer" parent="barrel" index="3"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 2.0
+anims/fire = SubResource( 1 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+

@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/Tank.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 476.107, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 434.415, 9.19211 )
+
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[node name="test_area" type="Node" index="0"]
+
+[node name="Tank" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 493.04, 313.546 )
+rotation = 0.146679
+_sections_unfolded = [ "Collision", "Transform" ]
+bodie = 4
+
+[node name="Tank2" parent="." index="1" instance=ExtResource( 1 )]
+
+position = Vector2( 673.744, 243.385 )
+rotation = 1.6267
+_sections_unfolded = [ "Collision", "Transform" ]
+bodie = 1
+barrel = 2
+
+[node name="walls" type="StaticBody2D" parent="." index="2"]
+
+position = Vector2( 305.644, 100.211 )
+input_pickable = false
+collision_layer = 4
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="wall" type="CollisionShape2D" parent="walls" index="0"]
+
+position = Vector2( 210.444, -66.8075 )
+shape = SubResource( 1 )
+
+[node name="wall2" type="CollisionShape2D" parent="walls" index="1"]
+
+position = Vector2( 210.444, 450.39 )
+shape = SubResource( 1 )
+
+[node name="wall3" type="CollisionShape2D" parent="walls" index="2"]
+
+position = Vector2( -274.921, 192.776 )
+rotation = 1.5708
+scale = Vector2( 0.618949, 1 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="wall4" type="CollisionShape2D" parent="walls" index="3"]
+
+position = Vector2( 695.485, 192.776 )
+rotation = 1.5708
+scale = Vector2( 0.618949, 1 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="circle" type="CollisionShape2D" parent="walls" index="4"]
+
+position = Vector2( 487.001, 112.79 )
+scale = Vector2( 3.32889, 3.29896 )
+shape = SubResource( 3 )
+
+[node name="circle2" type="CollisionShape2D" parent="walls" index="5"]
+
+position = Vector2( -60.1651, 310.253 )
+scale = Vector2( 3.32889, 3.29896 )
+shape = SubResource( 3 )
+
+
