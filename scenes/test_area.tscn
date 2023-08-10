@@ -17,20 +17,18 @@ extents = Vector2( 434.415, 9.19211 )
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="test_area" type="Node" index="0"]
+[node name="test_area" type="Node"]
 
 [node name="Tank" parent="." index="0" instance=ExtResource( 1 )]
 
 position = Vector2( 493.04, 313.546 )
 rotation = 0.146679
-_sections_unfolded = [ "Collision", "Transform" ]
 bodie = 4
 
 [node name="Tank2" parent="." index="1" instance=ExtResource( 1 )]
 
 position = Vector2( 673.744, 243.385 )
 rotation = 1.6267
-_sections_unfolded = [ "Collision", "Transform" ]
 bodie = 1
 barrel = 2
 
