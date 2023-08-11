@@ -1,11 +1,11 @@
 tool
 extends KinematicBody2D
+# class member variables go here, for example:
 
 onready var BULLET_TANK_GROUP = "bullet-" + str(self)
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+const ROT_VEL = PI/2 # 1/4 volta por seg
+
 var speed = 200
 var pre_bullet = preload("res://scenes/bullet.tscn")
 
@@ -47,42 +47,50 @@ func _draw(): # Quando o objeto precisa ser redesenhado
 	$sprite.texture = load(bodies[bodie])
 	$barrel/sprite.texture = load(barrels[barrel])
 
-func _process(delta):
+func _physics_process(delta):
 	# Called every frame. Delta is time since last frame.
 	# Update game logic here.
 	if Engine.editor_hint:
 		return
 	
-	var dir_x = 0
-	var dir_y = 0
+#	var dir_x = 0
+#	var dir_y = 0
+#
+##	tank vertical move
+#	if Input.is_action_pressed("ui_right"):
+#		dir_x += 1
+#	if Input.is_action_pressed("ui_left"):
+#		dir_x -= 1
+##	tank horizontal move
+#	if Input.is_action_pressed("ui_up"):
+#		dir_y -= 1
+#	if Input.is_action_pressed("ui_down"):
+#		dir_y += 1
+##	shoot move
+#	if Input.is_action_just_pressed("ui_shoot"):
+##		if there are up to three bullets in the group
+#		if get_tree().get_nodes_in_group(BULLET_TANK_GROUP).size() < 6:
+#			var bullet = pre_bullet.instance()
+#			# put the bullet on the tip cannon
+#			bullet.global_position = $barrel/muzzle.global_position
+#			bullet.dir = Vector2(cos(rotation), sin(rotation)).normalized()
+#			bullet.add_to_group(BULLET_TANK_GROUP)
+#			# put the bullet in the scene
+#			get_parent().add_child(bullet) # $"../".add_child(bullet)
+#			$barrel/anim.play("fire")
+#
+#	look_at(get_global_mouse_position())
+#
+#	move_and_slide(Vector2(dir_x,dir_y) * speed)
 	
-#	tank vertical move
+	var rot = 0
+	
 	if Input.is_action_pressed("ui_right"):
-		dir_x += 1
+		rot +=1
 	if Input.is_action_pressed("ui_left"):
-		dir_x -= 1
-#	tank horizontal move
-	if Input.is_action_pressed("ui_up"):
-		dir_y -= 1
-	if Input.is_action_pressed("ui_down"):
-		dir_y += 1
-#	shoot move
-	if Input.is_action_just_pressed("ui_shoot"):
-#		if there are up to three bullets in the group
-		if get_tree().get_nodes_in_group(BULLET_TANK_GROUP).size() < 6:
-			var bullet = pre_bullet.instance()
-			# put the bullet on the tip cannon
-			bullet.global_position = $barrel/muzzle.global_position
-			bullet.dir = Vector2(cos(rotation), sin(rotation)).normalized()
-			bullet.add_to_group(BULLET_TANK_GROUP)
-			# put the bullet in the scene
-			get_parent().add_child(bullet) # $"../".add_child(bullet)
-			$barrel/anim.play("fire")
-			
-	look_at(get_global_mouse_position())
-	
-	move_and_slide(Vector2(dir_x,dir_y) * speed)
-	
+		rot -=1
+		
+	rotate(ROT_VEL * rot * delta)
 	
 func set_bodie(val):
 	bodie = val
