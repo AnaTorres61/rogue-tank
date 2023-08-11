@@ -14,12 +14,7 @@ func _ready():
 func _process(delta):
 	if live:
 		if global_position.distance_to(init_pos) >= MAX_DIST:
-			$smoke.emitting = false
-			live = false
-			$sprite.visible = false
-			$anim_self_destruction.play("explode")
-			yield($anim_self_destruction, "animation_finished")
-			queue_free()
+			autodestroy()
 		
 		translate(dir * vel * delta)
 
@@ -30,3 +25,18 @@ func _on_notifier_screen_exited():
 func set_dir(val):
 	dir = val
 	rotation = dir.angle()
+
+func _on_bullet_body_entered(body):
+	if body.collision_layer == 4:
+		autodestroy()
+		
+
+func autodestroy():
+	$smoke.emitting = false
+	live = false
+	$sprite.visible = false
+	$anim_self_destruction.play("explode")
+	monitoring = false
+	monitorable = false
+	yield($anim_self_destruction, "animation_finished")
+	queue_free()
