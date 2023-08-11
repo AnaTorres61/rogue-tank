@@ -74,7 +74,7 @@ func _physics_process(delta):
 			var bullet = pre_bullet.instance()
 			# put the bullet on the tip cannon
 			bullet.global_position = $barrel/muzzle.global_position
-			bullet.dir = Vector2(cos(rotation), sin(rotation)).normalized()
+			bullet.dir = Vector2(cos($barrel.global_rotation), sin($barrel.global_rotation)).normalized()
 			bullet.add_to_group(BULLET_TANK_GROUP)
 			# put the bullet in the scene
 			get_parent().add_child(bullet) # $"../".add_child(bullet)
@@ -98,13 +98,13 @@ func _physics_process(delta):
 		
 	rotate(ROT_VEL * rot * delta)
 	
-	if dir != 0:
-		acell = lerp(acell, MAX_SPEED*dir, .03)
-	else:
-		acell = lerp(acell, 0, .05)
+#	if dir != 0:
+	acell = lerp(acell, MAX_SPEED*dir, .03)
+#	else:
+#		acell = lerp(acell, 0, .05)
 	
 	move_and_slide(Vector2(cos(rotation), sin(rotation)) * acell)
-	
+	$barrel.look_at(get_global_mouse_position())
 	
 func set_bodie(val):
 	bodie = val
