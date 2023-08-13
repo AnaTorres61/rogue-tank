@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 radius = 23.7393
 
-[node name="oilSpill_large" type="Area2D"]
+[node name="oilSpill_large" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -20,6 +20,9 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 

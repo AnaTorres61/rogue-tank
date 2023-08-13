@@ -14,7 +14,7 @@ extents = Vector2( 13.9814, 13.9872 )
 custom_solver_bias = 0.0
 extents = Vector2( 15.7095, 15.6538 )
 
-[node name="crateWood" type="StaticBody2D"]
+[node name="crateWood" type="StaticBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 4
@@ -25,6 +25,9 @@ friction = 1.0
 bounce = 0.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 
@@ -33,7 +36,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="shape" type="CollisionShape2D" parent="." index="1"]
 
-visible = false
 shape = SubResource( 1 )
 
 [node name="area_obstacle" type="Area2D" parent="." index="2"]
