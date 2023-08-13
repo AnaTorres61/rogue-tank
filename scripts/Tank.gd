@@ -53,9 +53,11 @@ func _physics_process(delta):
 	# Update game logic here.
 	if Engine.editor_hint:
 		return
+		
+	var vel_mod = 1
 	
-#	var dir_x = 0
-#	var dir_y = 0
+	if get_tree().get_nodes_in_group(str(self) + "oil").size() > 0:
+		vel_mod = .3
 #
 ##	tank vertical move
 #	if Input.is_action_pressed("ui_right"):
@@ -103,8 +105,9 @@ func _physics_process(delta):
 #	else:
 #		acell = lerp(acell, 0, .05)
 	
-	move_and_slide(Vector2(cos(rotation), sin(rotation)) * acell)
+	move_and_slide(Vector2(cos(rotation), sin(rotation)) * acell * vel_mod)
 	$barrel.look_at(get_global_mouse_position())
+	
 	
 func set_bodie(val):
 	bodie = val

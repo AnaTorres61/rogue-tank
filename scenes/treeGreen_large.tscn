@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/treeGreen_large.png" type="Texture" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 14.2865
+
+[node name="treeGreen_large" type="StaticBody2D" index="0"]
+
+editor/display_folded = true
+z_index = 10
+input_pickable = false
+collision_layer = 4
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="shadow" type="Sprite" parent="." index="0"]
+
+modulate = Color( 0, 0, 0, 0.33149 )
+position = Vector2( 5.36444, 4.87679 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="sprite" type="Sprite" parent="." index="1"]
+
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="shape" type="CollisionShape2D" parent="." index="2"]
+
+visible = false
+shape = SubResource( 1 )
+
+
