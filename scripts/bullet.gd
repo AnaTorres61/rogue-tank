@@ -44,3 +44,4 @@ func autodestroy():
 func _on_bullet_area_entered(area):
 	if area.has_method("hit"):
 		area.hit(damage, self)
+		autodestroy()
