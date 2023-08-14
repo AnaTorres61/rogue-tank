@@ -14,7 +14,7 @@ extents = Vector2( 13.9814, 13.9872 )
 custom_solver_bias = 0.0
 extents = Vector2( 15.7095, 15.6538 )
 
-[node name="crateWood" type="StaticBody2D" index="0"]
+[node name="crateWood" type="StaticBody2D"]
 
 input_pickable = false
 collision_layer = 4

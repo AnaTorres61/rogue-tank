@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://sprites/barricadeMetal.png" type="Texture" id=1]
+[ext_resource path="res://scripts/barricadeMetal.gd" type="Script" id=1]
+[ext_resource path="res://sprites/barricadeMetal.png" type="Texture" id=2]
+[ext_resource path="res://scripts/destructible.gd" type="Script" id=3]
 
-[node name="barricadeMetal" type="StaticBody2D" index="0"]
+[node name="barricadeMetal" type="StaticBody2D"]
 
 input_pickable = false
 collision_layer = 4
@@ -11,6 +13,7 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
 __meta__ = {
 "_edit_group_": true
@@ -18,11 +21,31 @@ __meta__ = {
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 
 [node name="poly" type="CollisionPolygon2D" parent="." index="1"]
 
 build_mode = 0
 polygon = PoolVector2Array( -13.9066, 8.94125, -9.25755, 13.7841, 0.0406418, 4.67958, 8.9514, 13.784, 13.7942, 8.94125, 5.07716, 0.0304794, 13.9879, -8.49286, 8.9514, -13.5294, 0.040638, -5.00604, -9.06384, -13.3357, -13.7129, -9.07399, -4.60846, -0.163233 )
+
+[node name="area_obstacle" type="Area2D" parent="." index="2"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 32
+collision_mask = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 3 )
+_sections_unfolded = [ "Collision" ]
+health = 40
+
+[node name="poly" type="CollisionPolygon2D" parent="area_obstacle" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -17.45, -9.18069, -8.75378, -0.484489, -17.977, 8.73875, -9.0173, 17.6985, 0.469467, 8.21171, 8.90215, 16.6444, 16.8078, 8.47523, 8.90215, 0.569595, 17.8619, -8.1266, 9.16566, -17.0863, 0.469467, -8.1266, -8.75378, -17.3498 )
 
 
