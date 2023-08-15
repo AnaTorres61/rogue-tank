@@ -56,6 +56,7 @@ _sections_unfolded = [ "Offset", "Region" ]
 
 [node name="body" type="StaticBody2D" parent="tile6" index="0"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -84,6 +85,31 @@ region_enabled = true
 region_rect = Rect2( 384, 0, 128, 128 )
 _sections_unfolded = [ "Offset", "Region" ]
 
+[node name="body" type="StaticBody2D" parent="tile7" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="poly" type="CollisionPolygon2D" parent="tile7/body" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 104, 0, 104, 24, 128, 24, 128, 32, 100, 32, 96, 28, 96, 0 )
+
+[node name="poly2" type="CollisionPolygon2D" parent="tile7/body" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 32, 0, 24, 0, 24, 128, 32, 128 )
+
+[node name="poly3" type="CollisionPolygon2D" parent="tile7/body" index="2"]
+
+build_mode = 0
+polygon = PoolVector2Array( 128, 96, 100, 96, 96, 100, 96, 128, 104, 128, 104, 104, 128, 104 )
+
 [node name="tile8" type="Sprite" parent="." index="4"]
 
 position = Vector2( 512, 0 )
@@ -92,6 +118,34 @@ centered = false
 region_enabled = true
 region_rect = Rect2( 512, 0, 128, 128 )
 _sections_unfolded = [ "Offset", "Region" ]
+
+[node name="body" type="StaticBody2D" parent="tile8" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="poly" type="CollisionPolygon2D" parent="tile8/body" index="0"]
+
+position = Vector2( -72, -1.52588e-005 )
+build_mode = 0
+polygon = PoolVector2Array( 96, 0, 96, 24, 72, 24, 72, 32, 100, 32, 104, 27, 104, 0 )
+
+[node name="poly2" type="CollisionPolygon2D" parent="tile8/body" index="1"]
+
+position = Vector2( -27, -1.52588e-005 )
+build_mode = 0
+polygon = PoolVector2Array( 123, 1.52588e-005, 131, 1.52588e-005, 131, 128, 123, 128 )
+
+[node name="poly3" type="CollisionPolygon2D" parent="tile8/body" index="2"]
+
+position = Vector2( -72, -1.52588e-005 )
+build_mode = 0
+polygon = PoolVector2Array( 72, 108, 89, 108, 92, 112, 92, 128, 104, 128, 104, 100, 100, 96, 72, 96 )
 
 [node name="tile9" type="Sprite" parent="." index="5"]
 
@@ -205,14 +259,61 @@ region_enabled = true
 region_rect = Rect2( 1024, 256, 128, 128 )
 _sections_unfolded = [ "Offset", "Region" ]
 
+[node name="body" type="StaticBody2D" parent="tile39" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="poly" type="CollisionPolygon2D" parent="tile39/body" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, 32, 128, 32, 128, 24, 0, 24 )
+
+[node name="poly2" type="CollisionPolygon2D" parent="tile39/body" index="1"]
+
+position = Vector2( 0, 72 )
+build_mode = 0
+polygon = PoolVector2Array( 0, 32, 128, 32, 128, 24, 0, 24 )
+
 [node name="tile40" type="Sprite" parent="." index="11"]
 
+editor/display_folded = true
 position = Vector2( 1024, 384 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 1024, 384, 128, 128 )
 _sections_unfolded = [ "Offset", "Region" ]
+
+[node name="body" type="StaticBody2D" parent="tile40" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="poly" type="CollisionPolygon2D" parent="tile40/body" index="0"]
+
+editor/display_folded = true
+build_mode = 0
+polygon = PoolVector2Array( 24, 0, 24, 128, 32, 128, 32, 0 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="poly2" type="CollisionPolygon2D" parent="tile40/body" index="1"]
+
+editor/display_folded = true
+position = Vector2( 72, 0 )
+build_mode = 0
+polygon = PoolVector2Array( 24, 0, 24, 128, 32, 128, 32, 0 )
 
 [node name="tile34" type="Sprite" parent="." index="12"]
 
@@ -223,9 +324,29 @@ region_enabled = true
 region_rect = Rect2( 1152, 0, 128, 128 )
 _sections_unfolded = [ "Offset", "Region" ]
 
+[node name="body" type="StaticBody2D" parent="tile34" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="poly" type="CollisionPolygon2D" parent="tile34/body" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, 32, 128, 32, 128, 24, 0, 24 )
+
+[node name="poly2" type="CollisionPolygon2D" parent="tile34/body" index="1"]
+
+position = Vector2( 0, 72 )
+build_mode = 0
+polygon = PoolVector2Array( 0, 32, 128, 32, 128, 24, 0, 24 )
+
 [node name="tile35" type="Sprite" parent="." index="13"]
 
-editor/display_folded = true
 position = Vector2( 1152, 128 )
 texture = ExtResource( 1 )
 centered = false
@@ -235,7 +356,6 @@ _sections_unfolded = [ "Offset", "Region" ]
 
 [node name="body" type="StaticBody2D" parent="tile35" index="0"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -243,6 +363,7 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Z Index" ]
 
 [node name="poly" type="CollisionPolygon2D" parent="tile35/body" index="0"]
 
@@ -264,6 +385,27 @@ region_enabled = true
 region_rect = Rect2( 1152, 256, 128, 128 )
 _sections_unfolded = [ "Offset", "Region" ]
 
+[node name="body" type="StaticBody2D" parent="tile36" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="poly" type="CollisionPolygon2D" parent="tile36/body" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, 24, 128, 24, 128, 32, 0, 32 )
+
+[node name="poly2" type="CollisionPolygon2D" parent="tile36/body" index="1"]
+
+position = Vector2( 0, 72 )
+build_mode = 0
+polygon = PoolVector2Array( 0, 24, 128, 24, 128, 32, 0, 32 )
+
 [node name="tile37" type="Sprite" parent="." index="15"]
 
 position = Vector2( 1152, 384 )
@@ -272,6 +414,29 @@ centered = false
 region_enabled = true
 region_rect = Rect2( 1152, 384, 128, 128 )
 _sections_unfolded = [ "Offset", "Region" ]
+
+[node name="body" type="StaticBody2D" parent="tile37" index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="poly" type="CollisionPolygon2D" parent="tile37/body" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 24, 0, 24, 128, 32, 128, 32, 0 )
+
+[node name="poly2" type="CollisionPolygon2D" parent="tile37/body" index="1"]
+
+position = Vector2( 72, 0 )
+build_mode = 0
+polygon = PoolVector2Array( 24, 0, 24, 128, 32, 128, 32, 0 )
 
 [node name="tile12" type="Sprite" parent="." index="16"]
 
@@ -291,14 +456,60 @@ region_enabled = true
 region_rect = Rect2( 896, 256, 128, 128 )
 _sections_unfolded = [ "Offset", "Region" ]
 
+[node name="body" type="StaticBody2D" parent="tile13" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="poly" type="CollisionPolygon2D" parent="tile13/body" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 128, 32, 0, 32, 0, 24, 128, 24 )
+
+[node name="poly2" type="CollisionPolygon2D" parent="tile13/body" index="1"]
+
+position = Vector2( 0, 72 )
+build_mode = 0
+polygon = PoolVector2Array( 128, 32, 0, 32, 0, 24, 128, 24 )
+
 [node name="tile14" type="Sprite" parent="." index="18"]
 
+editor/display_folded = true
 position = Vector2( 896, 384 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 896, 384, 128, 128 )
 _sections_unfolded = [ "Offset", "Region" ]
+
+[node name="body" type="StaticBody2D" parent="tile14" index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="poly" type="CollisionPolygon2D" parent="tile14/body" index="0"]
+
+editor/display_folded = true
+build_mode = 0
+polygon = PoolVector2Array( 24, 0, 24, 128, 32, 128, 32, 0 )
+
+[node name="poly2" type="CollisionPolygon2D" parent="tile14/body" index="1"]
+
+editor/display_folded = true
+position = Vector2( 72, 0 )
+build_mode = 0
+polygon = PoolVector2Array( 24, 0, 24, 128, 32, 128, 32, 0 )
 
 [node name="tile15" type="Sprite" parent="." index="19"]
 
@@ -371,6 +582,27 @@ region_enabled = true
 region_rect = Rect2( 512, 384, 128, 128 )
 _sections_unfolded = [ "Offset", "Region" ]
 
+[node name="body" type="StaticBody2D" parent="tile17" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="poly" type="CollisionPolygon2D" parent="tile17/body" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, 96, 11, 96, 21, 100, 28, 108, 32, 115, 32, 128, 19, 128, 19, 119, 12, 112, 7, 109, 0, 109 )
+
+[node name="poly2" type="CollisionPolygon2D" parent="tile17/body" index="1"]
+
+position = Vector2( -9, 21 )
+build_mode = 0
+polygon = PoolVector2Array( 9, 11, 24, 11, 40, 14, 56, 19, 72, 28, 90, 44, 96, 59, 103, 77, 105, 95, 105, 107, 119, 107, 118, 79, 110, 54, 99, 34, 81, 16, 57, 5, 32, -1, 9, -1 )
+
 [node name="tile18" type="Sprite" parent="." index="22"]
 
 position = Vector2( 384, 384 )
@@ -379,6 +611,26 @@ centered = false
 region_enabled = true
 region_rect = Rect2( 384, 384, 128, 128 )
 _sections_unfolded = [ "Offset", "Region" ]
+
+[node name="body" type="StaticBody2D" parent="tile18" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="poly" type="CollisionPolygon2D" parent="tile18/body" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 128, 20, 101, 20, 76, 27, 52, 40, 35, 59, 26, 76, 21, 94, 19, 109, 19, 128, 32, 128, 32, 111, 36, 90, 45, 68, 58, 54, 78, 41, 94, 36, 110, 33, 116, 32, 128, 32 )
+
+[node name="poly2" type="CollisionPolygon2D" parent="tile18/body" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 128, 96, 119, 96, 109, 100, 100, 108, 96, 118, 96, 128, 110, 128, 110, 120, 115, 114, 120, 110, 128, 110 )
 
 [node name="tile19" type="Sprite" parent="." index="23"]
 
@@ -389,6 +641,47 @@ region_enabled = true
 region_rect = Rect2( 256, 384, 128, 128 )
 _sections_unfolded = [ "Offset", "Region" ]
 
+[node name="body" type="StaticBody2D" parent="tile19" index="0"]
+
+editor/display_folded = true
+z_as_relative = false
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Transform", "Visibility", "Z Index" ]
+
+[node name="poly" type="CollisionPolygon2D" parent="tile19/body" index="0"]
+
+position = Vector2( 0.714215, -1.90735e-006 )
+scale = Vector2( 0.982954, 1 )
+build_mode = 0
+polygon = PoolVector2Array( 24, 0, 24, 24, -1, 24, -1, 32, 28, 32, 32, 28, 32, 0 )
+
+[node name="poly2" type="CollisionPolygon2D" parent="tile19/body" index="1"]
+
+position = Vector2( 0.714215, -1.90735e-006 )
+scale = Vector2( 0.982954, 1 )
+build_mode = 0
+polygon = PoolVector2Array( 96.9382, 0, 105.077, 0, 105.077, 24, 129.493, 24, 129.493, 32, 101.008, 32, 96.9382, 28 )
+
+[node name="poly3" type="CollisionPolygon2D" parent="tile19/body" index="2"]
+
+position = Vector2( 0.714215, -1.90735e-006 )
+scale = Vector2( 0.982954, 1 )
+build_mode = 0
+polygon = PoolVector2Array( 129.493, 96, 129.493, 104, 105.077, 104, 105.077, 128, 96.9382, 128, 96.9382, 100, 101.008, 96 )
+
+[node name="poly4" type="CollisionPolygon2D" parent="tile19/body" index="3"]
+
+position = Vector2( 0.714215, -1.90735e-006 )
+scale = Vector2( 0.982954, 1 )
+build_mode = 0
+polygon = PoolVector2Array( -0.726593, 96, -0.726593, 104, 23.6896, 104, 23.6896, 128, 31.8283, 128, 31.8283, 100, 27.759, 96 )
+
 [node name="tile20" type="Sprite" parent="." index="24"]
 
 position = Vector2( 128, 384 )
@@ -398,9 +691,40 @@ region_enabled = true
 region_rect = Rect2( 128, 384, 128, 128 )
 _sections_unfolded = [ "Offset", "Region" ]
 
+[node name="body" type="StaticBody2D" parent="tile20" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="poly" type="CollisionPolygon2D" parent="tile20/body" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 32, 0, 24, 0, 25, 20, 26, 26, 17, 25, 0, 25, 0, 33, 34, 34 )
+
+[node name="poly2" type="CollisionPolygon2D" parent="tile20/body" index="1"]
+
+position = Vector2( -1.22359, -9.53674e-007 )
+scale = Vector2( 1.01411, 1 )
+build_mode = 0
+polygon = PoolVector2Array( 96, 0, 104, 0, 106, 14, 115, 23, 127.425, 24, 127.425, 32, 115, 32, 107, 28, 100, 20, 96, 12 )
+
+[node name="poly3" type="CollisionPolygon2D" parent="tile20/body" index="2"]
+
+build_mode = 0
+polygon = PoolVector2Array( 128, 96, 128, 104, 112, 104, 102, 102, 103, 113, 104, 119, 104, 128, 96, 128, 95, 109, 93, 95, 109, 95 )
+
+[node name="poly4" type="CollisionPolygon2D" parent="tile20/body" index="3"]
+
+build_mode = 0
+polygon = PoolVector2Array( 0, 96, 0, 104, 10, 104, 17, 108, 21, 114, 24, 119, 24, 128, 32, 128, 32, 118, 28, 109, 20, 100, 12, 97 )
+
 [node name="tile21" type="Sprite" parent="." index="25"]
 
-editor/display_folded = true
 position = Vector2( 128, 256 )
 texture = ExtResource( 1 )
 centered = false
@@ -420,18 +744,20 @@ bounce = 0.0
 
 [node name="poly" type="CollisionPolygon2D" parent="tile21/body" index="0"]
 
+position = Vector2( 27.1245, -3.8147e-006 )
+scale = Vector2( 0.716346, 1 )
 build_mode = 0
-polygon = PoolVector2Array( 96, 0, 109, 0, 109, 128, 96, 128 )
+polygon = PoolVector2Array( 6.80606, 0, 6.80606, 128, -4.36172, 128, -4.36172, 0 )
 
 [node name="poly2" type="CollisionPolygon2D" parent="tile21/body" index="1"]
 
-position = Vector2( -77, 0 )
+position = Vector2( 99.1245, -3.8147e-006 )
+scale = Vector2( 0.716346, 1 )
 build_mode = 0
-polygon = PoolVector2Array( 96, 0, 109, 0, 109, 128, 96, 128 )
+polygon = PoolVector2Array( 6.80606, 0, 6.80606, 128, -4.36172, 128, -4.36172, 0 )
 
 [node name="tile22" type="Sprite" parent="." index="26"]
 
-editor/display_folded = true
 position = Vector2( 256, 256 )
 texture = ExtResource( 1 )
 centered = false
@@ -469,6 +795,45 @@ region_enabled = true
 region_rect = Rect2( 256, 128, 128, 128 )
 _sections_unfolded = [ "Offset", "Region" ]
 
+[node name="body" type="StaticBody2D" parent="tile23" index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="poly" type="CollisionPolygon2D" parent="tile23/body" index="0"]
+
+position = Vector2( 0.714215, -1.90735e-006 )
+scale = Vector2( 0.982954, 1 )
+build_mode = 0
+polygon = PoolVector2Array( 24, 0, 24, 24, -1, 24, -1, 32, 28, 32, 32, 28, 32, 0 )
+
+[node name="poly2" type="CollisionPolygon2D" parent="tile23/body" index="1"]
+
+position = Vector2( 0.714215, -1.90735e-006 )
+scale = Vector2( 0.982954, 1 )
+build_mode = 0
+polygon = PoolVector2Array( 96.9382, 0, 105.077, 0, 105.077, 24, 129.493, 24, 129.493, 32, 101.008, 32, 96.9382, 28 )
+
+[node name="poly3" type="CollisionPolygon2D" parent="tile23/body" index="2"]
+
+position = Vector2( 0.714215, -1.90735e-006 )
+scale = Vector2( 0.982954, 1 )
+build_mode = 0
+polygon = PoolVector2Array( 129.493, 96, 129.493, 104, 105.077, 104, 105.077, 128, 96.9382, 128, 96.9382, 100, 101.008, 96 )
+
+[node name="poly4" type="CollisionPolygon2D" parent="tile23/body" index="3"]
+
+position = Vector2( 0.714215, -1.90735e-006 )
+scale = Vector2( 0.982954, 1 )
+build_mode = 0
+polygon = PoolVector2Array( -0.726593, 96, -0.726593, 104, 23.6896, 104, 23.6896, 128, 31.8283, 128, 31.8283, 100, 27.759, 96 )
+
 [node name="tile24" type="Sprite" parent="." index="28"]
 
 editor/display_folded = true
@@ -481,6 +846,7 @@ _sections_unfolded = [ "Offset", "Region" ]
 
 [node name="body" type="StaticBody2D" parent="tile24" index="0"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -512,6 +878,7 @@ _sections_unfolded = [ "Offset", "Region" ]
 
 [node name="body" type="StaticBody2D" parent="tile25" index="0"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -539,6 +906,26 @@ centered = false
 region_enabled = true
 region_rect = Rect2( 640, 128, 128, 128 )
 _sections_unfolded = [ "Offset", "Region" ]
+
+[node name="body" type="StaticBody2D" parent="tile26" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="poly" type="CollisionPolygon2D" parent="tile26/body" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 104, 1, 105, 11, 109, 19, 117, 23, 128, 24, 128, 32, 116, 32, 105, 26, 99, 16, 96, 6, 96, 1 )
+
+[node name="poly2" type="CollisionPolygon2D" parent="tile26/body" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 31, 0, 32, 15, 36, 39, 44, 58, 58, 75, 72, 85, 90, 92, 111, 96, 128, 96, 128, 104, 109, 104, 86, 99, 71, 92, 58, 86, 48, 76, 38, 62, 30, 45, 27, 28, 24, 13, 24, 0 )
 
 [node name="tile27" type="Sprite" parent="." index="31"]
 
@@ -574,7 +961,6 @@ polygon = PoolVector2Array( 36, 0, 44, 0, 44, 12, 39, 21, 32, 29, 23, 32, 12, 32
 
 [node name="tile28" type="Sprite" parent="." index="32"]
 
-editor/display_folded = true
 position = Vector2( 768, 256 )
 texture = ExtResource( 1 )
 centered = false
@@ -584,7 +970,6 @@ _sections_unfolded = [ "Offset", "Region" ]
 
 [node name="body" type="StaticBody2D" parent="tile28" index="0"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -596,23 +981,20 @@ bounce = 0.0
 [node name="poly" type="CollisionPolygon2D" parent="tile28/body" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 24, 128, 32, 128, 32, 100, 28, 96, 0, 96, 0, 104, 24, 104 )
+polygon = PoolVector2Array( 0, 32, 128, 32, 128, 24, 0, 24 )
 
 [node name="poly2" type="CollisionPolygon2D" parent="tile28/body" index="1"]
 
-position = Vector2( 72, 0 )
 build_mode = 0
-polygon = PoolVector2Array( 24, 128, 32, 128, 32, 104, 56, 104, 56, 96, 28, 96, 24, 101 )
+polygon = PoolVector2Array( 0, 96, 28, 96, 32, 100, 32, 128, 23, 128, 23, 105, 0, 105 )
 
 [node name="poly3" type="CollisionPolygon2D" parent="tile28/body" index="2"]
 
-position = Vector2( 72, -71 )
 build_mode = 0
-polygon = PoolVector2Array( -72, 95, -72, 103, 56, 103, 56, 95 )
+polygon = PoolVector2Array( 100, 96, 128, 96, 128, 104, 105, 104, 105, 128, 96, 128, 96, 101 )
 
 [node name="tile29" type="Sprite" parent="." index="33"]
 
-editor/display_folded = true
 position = Vector2( 640, 256 )
 texture = ExtResource( 1 )
 centered = false
@@ -622,7 +1004,6 @@ _sections_unfolded = [ "Offset", "Region" ]
 
 [node name="body" type="StaticBody2D" parent="tile29" index="0"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -634,22 +1015,21 @@ bounce = 0.0
 [node name="poly" type="CollisionPolygon2D" parent="tile29/body" index="0"]
 
 build_mode = 0
-polygon = PoolVector2Array( 96, 0, 96, 28, 101, 32, 128, 32, 128, 24, 104, 24, 104, 0 )
+polygon = PoolVector2Array( 32, 0, 32, 28, 28, 32, 0, 32, 0, 23, 23, 23, 23, 0 )
 
 [node name="poly2" type="CollisionPolygon2D" parent="tile29/body" index="1"]
 
-position = Vector2( -72, 0 )
 build_mode = 0
-polygon = PoolVector2Array( 96, 0, 96, 24, 72, 24, 72, 32, 100, 32, 104, 27, 104, 0 )
+polygon = PoolVector2Array( 96, 0, 96, 28, 100, 32, 128, 32, 128, 24, 103, 24, 103, 0 )
 
 [node name="poly3" type="CollisionPolygon2D" parent="tile29/body" index="2"]
 
-position = Vector2( -72, 72 )
 build_mode = 0
-polygon = PoolVector2Array( 200, 24, 200, 32, 72, 32, 72, 24 )
+polygon = PoolVector2Array( 0, 96, 128, 96, 128, 105, 0, 105 )
 
 [node name="tile30" type="Sprite" parent="." index="34"]
 
+editor/display_folded = true
 position = Vector2( 512, 256 )
 texture = ExtResource( 1 )
 centered = false
@@ -694,9 +1074,40 @@ region_enabled = true
 region_rect = Rect2( 384, 256, 128, 128 )
 _sections_unfolded = [ "Offset", "Region" ]
 
-[node name="tile32" type="Sprite" parent="." index="36"]
+[node name="body" type="StaticBody2D" parent="tile31" index="0"]
 
 editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="poly" type="CollisionPolygon2D" parent="tile31/body" index="0"]
+
+position = Vector2( 1.68684, -3.8147e-006 )
+scale = Vector2( 0.951388, 1 )
+build_mode = 0
+polygon = PoolVector2Array( 32, 0, 32, 128, 23, 128, 23, 0 )
+
+[node name="poly2" type="CollisionPolygon2D" parent="tile31/body" index="1"]
+
+position = Vector2( 1.68684, -3.8147e-006 )
+scale = Vector2( 0.951388, 1 )
+build_mode = 0
+polygon = PoolVector2Array( 99.1322, 0, 99.1322, 28, 103.337, 32, 132.767, 32, 132.767, 24, 106.49, 24, 106.49, 0 )
+
+[node name="poly3" type="CollisionPolygon2D" parent="tile31/body" index="2"]
+
+position = Vector2( 1.68684, -3.8147e-006 )
+scale = Vector2( 0.951388, 1 )
+build_mode = 0
+polygon = PoolVector2Array( 132.767, 96, 103.337, 96, 99.1322, 101, 99.1322, 128, 107.541, 128, 107.541, 104, 132.767, 104 )
+
+[node name="tile32" type="Sprite" parent="." index="36"]
+
 position = Vector2( 128, 128 )
 texture = ExtResource( 1 )
 centered = false
@@ -721,6 +1132,8 @@ polygon = PoolVector2Array( 32, 0, 24, 0, 25, 20, 26, 26, 17, 25, 0, 25, 0, 33, 
 
 [node name="poly2" type="CollisionPolygon2D" parent="tile32/body" index="1"]
 
+position = Vector2( -1.22359, -9.53674e-007 )
+scale = Vector2( 1.01411, 1 )
 build_mode = 0
 polygon = PoolVector2Array( 96, 0, 104, 0, 106, 14, 115, 23, 127, 24, 127, 32, 115, 32, 107, 28, 100, 20, 96, 12 )
 
@@ -736,6 +1149,7 @@ polygon = PoolVector2Array( 0, 96, 0, 104, 10, 104, 17, 108, 21, 114, 24, 119, 2
 
 [node name="tile2" type="Sprite" parent="." index="37"]
 
+editor/display_folded = true
 position = Vector2( 0, 128 )
 texture = ExtResource( 1 )
 centered = false
@@ -745,6 +1159,7 @@ _sections_unfolded = [ "Offset", "Region" ]
 
 [node name="tile3" type="Sprite" parent="." index="38"]
 
+editor/display_folded = true
 position = Vector2( 0, 256 )
 texture = ExtResource( 1 )
 centered = false
@@ -754,6 +1169,7 @@ _sections_unfolded = [ "Offset", "Region" ]
 
 [node name="tile4" type="Sprite" parent="." index="39"]
 
+editor/display_folded = true
 position = Vector2( 0, 384 )
 texture = ExtResource( 1 )
 centered = false

@@ -11,14 +11,14 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 545.373, 10 )
+extents = Vector2( 833.478, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 526.446, 9.19211 )
+extents = Vector2( 621.596, 8.56023 )
 
-[node name="test_area" type="Node"]
+[node name="test_area" type="Node" index="0"]
 
 [node name="ground" type="TileMap" parent="." index="0"]
 
@@ -39,21 +39,46 @@ collision_layer = 0
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 0, 2, 0, 1, 2, 0, 2, 29, 0, 3, 0, 0, 4, 28, 0, 5, 6, 0, 6, 2, 0, 7, 29, 0, 65536, 0, 0, 65537, 28, 0, 65538, 31, 0, 65539, 0, 0, 65540, 1, 0, 65541, 13, 0, 65542, 9, 0, 65543, 13, 0, 131072, 28, 0, 131073, 36, 0, 131074, 2, 0, 131075, 6, 0, 131076, 31, 0, 131077, 20, 0, 131078, 26, 0, 131079, 34, 0, 196608, 20, 0, 196609, 33, 0, 196610, 26, 0, 196611, 33, 0, 196612, 26, 0, 196613, 32, 0, 196614, 26, 0, 196615, 19, 0, 262144, 38, 0, 262145, 38, 0, 262146, 38, 0, 262147, 38, 0, 262148, 38, 0, 262149, 25, 0, 262150, 38, 0, 262151, 38, 0 )
-_sections_unfolded = [ "Collision", "Z Index" ]
+tile_data = PoolIntArray( 0, 2, 0, 1, 2, 0, 2, 29, 0, 3, 0, 0, 4, 28, 0, 5, 6, 0, 6, 2, 0, 7, 29, 0, 8, 7, 0, 9, 22, 0, 10, 26, 0, 11, 38, 0, 12, 38, 0, 65536, 0, 0, 65537, 28, 0, 65538, 31, 0, 65539, 0, 0, 65540, 1, 0, 65541, 1, 0, 65542, 0, 0, 65543, 1, 0, 65544, 7, 0, 65545, 20, 0, 65546, 21, 0, 65547, 38, 0, 65548, 38, 0, 131072, 28, 0, 131073, 36, 0, 131074, 2, 0, 131075, 2, 0, 131076, 31, 0, 131077, 3, 0, 131078, 0, 0, 131079, 30, 0, 131080, 17, 0, 131081, 32, 0, 131082, 19, 0, 131083, 38, 0, 131084, 38, 0, 196608, 1, 0, 196609, 30, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 30, 0, 196614, 2, 0, 196615, 2, 0, 196616, 17, 0, 196617, 23, 0, 196618, 26, 0, 196619, 26, 0, 196620, 34, 0, 262144, 13, 0, 262145, 9, 0, 262146, 9, 0, 262147, 9, 0, 262148, 37, 0, 262149, 37, 0, 262150, 37, 0, 262151, 7, 0, 262152, 38, 0, 262153, 25, 0, 262154, 38, 0, 262155, 38, 0, 262156, 25, 0, 327680, 20, 0, 327681, 26, 0, 327682, 26, 0, 327683, 33, 0, 327684, 12, 0, 327685, 2, 0, 327686, 2, 0, 327687, 14, 0, 327688, 26, 0, 327689, 33, 0, 327690, 26, 0, 327691, 26, 0, 327692, 19, 0 )
+_sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Tank" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 33.7963, 65.396 )
+position = Vector2( 1435.22, 713.485 )
 rotation = -0.00607844
 bodie = 4
 
+[node name="Camera2D" type="Camera2D" parent="Tank" index="3"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = 0
+limit_top = 0
+limit_right = 1664
+limit_bottom = 768
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.3
+drag_margin_top = 0.3
+drag_margin_right = 0.3
+drag_margin_bottom = 0.3
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Drag Margin", "Limit", "Smoothing" ]
+
 [node name="walls" type="StaticBody2D" parent="." index="2"]
 
-editor/display_folded = true
 position = Vector2( 305.644, 100.211 )
 input_pickable = false
 collision_layer = 4
@@ -66,26 +91,26 @@ _sections_unfolded = [ "Collision", "Material" ]
 
 [node name="wall" type="CollisionShape2D" parent="walls" index="0"]
 
-position = Vector2( 205.433, -120.253 )
+position = Vector2( 529.214, -111.253 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="wall2" type="CollisionShape2D" parent="walls" index="1"]
 
-position = Vector2( 205.434, 557.282 )
+position = Vector2( 527.808, 677.389 )
 shape = SubResource( 1 )
 
-[node name="wall3" type="CollisionShape2D" parent="walls" index="2"]
+[node name="wall4" type="CollisionShape2D" parent="walls" index="2"]
 
-position = Vector2( -325.027, 207.808 )
+position = Vector2( 1367.06, 284.713 )
 rotation = 1.5708
 scale = Vector2( 0.618949, 1 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="wall4" type="CollisionShape2D" parent="walls" index="3"]
+[node name="wall5" type="CollisionShape2D" parent="walls" index="3"]
 
-position = Vector2( 738.91, 201.127 )
+position = Vector2( -314.147, 285.323 )
 rotation = 1.5708
 scale = Vector2( 0.618949, 1 )
 shape = SubResource( 2 )
@@ -95,89 +120,118 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="crateWood" parent="obstacles" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 722.773, 546.234 )
+position = Vector2( 1079.83, 694.079 )
 
 [node name="crateWood2" parent="obstacles" index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 682.552, 566.073 )
+position = Vector2( 317.125, 722.286 )
 
 [node name="crateWood4" parent="obstacles" index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 518.505, 435.313 )
+position = Vector2( 1121.04, 717.055 )
 
-[node name="crateWood3" parent="obstacles" index="3" instance=ExtResource( 3 )]
+[node name="crateWood5" parent="obstacles" index="3" instance=ExtResource( 3 )]
 
-position = Vector2( 696.174, 500.087 )
+position = Vector2( 587.628, 604.648 )
+
+[node name="crateWood6" parent="obstacles" index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 586.95, 556.257 )
+
+[node name="crateWood3" parent="obstacles" index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 263.798, 689.774 )
 scale = Vector2( 1.43049, 1.50069 )
 
-[node name="barricadeMetal" parent="obstacles" index="4" instance=ExtResource( 4 )]
+[node name="barricadeMetal4" parent="obstacles" index="6" instance=ExtResource( 4 )]
 
-position = Vector2( 118.828, 445.694 )
+position = Vector2( 952.895, 375.956 )
 rotation = -0.494625
 scale = Vector2( 1.15736, 1.14862 )
 
-[node name="barricadeMetal2" parent="obstacles" index="5" instance=ExtResource( 4 )]
+[node name="barricadeMetal5" parent="obstacles" index="7" instance=ExtResource( 4 )]
+
+position = Vector2( 1371.32, 367.587 )
+rotation = -0.494625
+scale = Vector2( 1.15736, 1.14862 )
+
+[node name="barricadeMetal2" parent="obstacles" index="8" instance=ExtResource( 4 )]
 
 position = Vector2( 689.733, 172.624 )
 
-[node name="barricadeMetal3" parent="obstacles" index="6" instance=ExtResource( 4 )]
+[node name="barricadeMetal3" parent="obstacles" index="9" instance=ExtResource( 4 )]
 
 position = Vector2( 723.681, 172.558 )
 
-[node name="barrelBlack_top" parent="obstacles" index="7" instance=ExtResource( 5 )]
+[node name="barrelBlack_top" parent="obstacles" index="10" instance=ExtResource( 5 )]
 
-position = Vector2( 494.608, 312.234 )
+position = Vector2( 1217.09, 326.182 )
 scale = Vector2( 1.80697, 1.76033 )
 _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 
-[node name="barrelBlack_top2" parent="obstacles" index="8" instance=ExtResource( 5 )]
+[node name="barrelBlack_top2" parent="obstacles" index="11" instance=ExtResource( 5 )]
 
-position = Vector2( 295.272, 303.552 )
+position = Vector2( 202.419, 335.036 )
 
-[node name="barrelBlack_top3" parent="obstacles" index="9" instance=ExtResource( 5 )]
+[node name="barrelBlack_top3" parent="obstacles" index="12" instance=ExtResource( 5 )]
 
-position = Vector2( 193.87, 331.761 )
+position = Vector2( 176.741, 305.328 )
 scale = Vector2( 0.747123, 0.794686 )
 
-[node name="treeGreen_large4" parent="obstacles" index="10" instance=ExtResource( 6 )]
+[node name="treeGreen_large4" parent="obstacles" index="13" instance=ExtResource( 6 )]
 
 position = Vector2( 790.355, 146.314 )
 
-[node name="treeGreen_large8" parent="obstacles" index="11" instance=ExtResource( 6 )]
+[node name="treeGreen_large8" parent="obstacles" index="14" instance=ExtResource( 6 )]
 
 position = Vector2( 872.15, 148.586 )
 
-[node name="treeGreen_large5" parent="obstacles" index="12" instance=ExtResource( 6 )]
+[node name="treeGreen_large5" parent="obstacles" index="15" instance=ExtResource( 6 )]
 
-position = Vector2( 438.183, 125.865 )
+position = Vector2( 466.078, 109.128 )
 
-[node name="treeGreen_large9" parent="obstacles" index="13" instance=ExtResource( 6 )]
+[node name="treeGreen_large9" parent="obstacles" index="16" instance=ExtResource( 6 )]
 
-position = Vector2( 483.625, 225.837 )
+position = Vector2( 282.166, 405.305 )
 
-[node name="treeGreen_large11" parent="obstacles" index="14" instance=ExtResource( 6 )]
+[node name="treeGreen_large11" parent="obstacles" index="17" instance=ExtResource( 6 )]
 
-position = Vector2( 604.045, 348.529 )
+position = Vector2( 298.605, 481.424 )
 _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 
-[node name="treeGreen_large10" parent="obstacles" index="15" instance=ExtResource( 6 )]
+[node name="treeGreen_large13" parent="obstacles" index="18" instance=ExtResource( 6 )]
 
-position = Vector2( 374.565, 234.925 )
+position = Vector2( 349.869, 432.211 )
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 
-[node name="treeGreen_large6" parent="obstacles" index="16" instance=ExtResource( 6 )]
+[node name="treeGreen_large12" parent="obstacles" index="19" instance=ExtResource( 6 )]
 
-position = Vector2( 67.834, 228.109 )
+position = Vector2( 140.985, 479.637 )
+_sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 
-[node name="treeGreen_large7" parent="obstacles" index="17" instance=ExtResource( 6 )]
+[node name="treeGreen_large10" parent="obstacles" index="20" instance=ExtResource( 6 )]
 
-position = Vector2( 147.357, 144.042 )
+position = Vector2( 388.513, 223.767 )
 
-[node name="oilSpill_large" parent="obstacles" index="18" instance=ExtResource( 7 )]
+[node name="treeGreen_large6" parent="obstacles" index="21" instance=ExtResource( 6 )]
+
+position = Vector2( 631.317, 348.058 )
+
+[node name="treeGreen_large7" parent="obstacles" index="22" instance=ExtResource( 6 )]
+
+position = Vector2( 80.4085, 191.464 )
+
+[node name="oilSpill_large" parent="obstacles" index="23" instance=ExtResource( 7 )]
 
 position = Vector2( 842.074, 66.6581 )
 
-[node name="oilSpill_large2" parent="obstacles" index="19" instance=ExtResource( 7 )]
+[node name="oilSpill_large3" parent="obstacles" index="24" instance=ExtResource( 7 )]
 
-position = Vector2( 955.678, 321.131 )
+position = Vector2( 470.696, 323.336 )
+scale = Vector2( 0.639708, 0.737164 )
+
+[node name="oilSpill_large2" parent="obstacles" index="25" instance=ExtResource( 7 )]
+
+position = Vector2( 827.36, 452.239 )
 
 
