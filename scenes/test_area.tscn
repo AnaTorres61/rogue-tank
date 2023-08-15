@@ -47,7 +47,7 @@ __meta__ = {
 
 [node name="Tank" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 1435.22, 713.485 )
+position = Vector2( 32.0955, 64.1058 )
 rotation = -0.00607844
 bodie = 4
 
@@ -151,7 +151,7 @@ scale = Vector2( 1.15736, 1.14862 )
 
 [node name="barricadeMetal5" parent="obstacles" index="7" instance=ExtResource( 4 )]
 
-position = Vector2( 1371.32, 367.587 )
+position = Vector2( 1362.95, 367.587 )
 rotation = -0.494625
 scale = Vector2( 1.15736, 1.14862 )
 
@@ -159,78 +159,84 @@ scale = Vector2( 1.15736, 1.14862 )
 
 position = Vector2( 689.733, 172.624 )
 
-[node name="barricadeMetal3" parent="obstacles" index="9" instance=ExtResource( 4 )]
-
-position = Vector2( 723.681, 172.558 )
-
-[node name="barrelBlack_top" parent="obstacles" index="10" instance=ExtResource( 5 )]
+[node name="barrelBlack_top" parent="obstacles" index="9" instance=ExtResource( 5 )]
 
 position = Vector2( 1217.09, 326.182 )
 scale = Vector2( 1.80697, 1.76033 )
 _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 
-[node name="barrelBlack_top2" parent="obstacles" index="11" instance=ExtResource( 5 )]
+[node name="barrelBlack_top2" parent="obstacles" index="10" instance=ExtResource( 5 )]
 
 position = Vector2( 202.419, 335.036 )
 
-[node name="barrelBlack_top3" parent="obstacles" index="12" instance=ExtResource( 5 )]
+[node name="barrelBlack_top4" parent="obstacles" index="11" instance=ExtResource( 5 )]
+
+position = Vector2( 1518.62, 113.627 )
+scale = Vector2( 1.21568, 1.22644 )
+
+[node name="barrelBlack_top5" parent="obstacles" index="12" instance=ExtResource( 5 )]
+
+position = Vector2( 903.866, 625.924 )
+scale = Vector2( 1.21568, 1.22644 )
+
+[node name="barrelBlack_top3" parent="obstacles" index="13" instance=ExtResource( 5 )]
 
 position = Vector2( 176.741, 305.328 )
 scale = Vector2( 0.747123, 0.794686 )
 
-[node name="treeGreen_large4" parent="obstacles" index="13" instance=ExtResource( 6 )]
+[node name="treeGreen_large4" parent="obstacles" index="14" instance=ExtResource( 6 )]
 
 position = Vector2( 790.355, 146.314 )
 
-[node name="treeGreen_large8" parent="obstacles" index="14" instance=ExtResource( 6 )]
+[node name="treeGreen_large8" parent="obstacles" index="15" instance=ExtResource( 6 )]
 
 position = Vector2( 872.15, 148.586 )
 
-[node name="treeGreen_large5" parent="obstacles" index="15" instance=ExtResource( 6 )]
+[node name="treeGreen_large5" parent="obstacles" index="16" instance=ExtResource( 6 )]
 
 position = Vector2( 466.078, 109.128 )
 
-[node name="treeGreen_large9" parent="obstacles" index="16" instance=ExtResource( 6 )]
+[node name="treeGreen_large9" parent="obstacles" index="17" instance=ExtResource( 6 )]
 
 position = Vector2( 282.166, 405.305 )
 
-[node name="treeGreen_large11" parent="obstacles" index="17" instance=ExtResource( 6 )]
+[node name="treeGreen_large11" parent="obstacles" index="18" instance=ExtResource( 6 )]
 
 position = Vector2( 298.605, 481.424 )
 _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 
-[node name="treeGreen_large13" parent="obstacles" index="18" instance=ExtResource( 6 )]
+[node name="treeGreen_large13" parent="obstacles" index="19" instance=ExtResource( 6 )]
 
 position = Vector2( 349.869, 432.211 )
 _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 
-[node name="treeGreen_large12" parent="obstacles" index="19" instance=ExtResource( 6 )]
+[node name="treeGreen_large12" parent="obstacles" index="20" instance=ExtResource( 6 )]
 
 position = Vector2( 140.985, 479.637 )
 _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
 
-[node name="treeGreen_large10" parent="obstacles" index="20" instance=ExtResource( 6 )]
+[node name="treeGreen_large10" parent="obstacles" index="21" instance=ExtResource( 6 )]
 
 position = Vector2( 388.513, 223.767 )
 
-[node name="treeGreen_large6" parent="obstacles" index="21" instance=ExtResource( 6 )]
+[node name="treeGreen_large6" parent="obstacles" index="22" instance=ExtResource( 6 )]
 
 position = Vector2( 631.317, 348.058 )
 
-[node name="treeGreen_large7" parent="obstacles" index="22" instance=ExtResource( 6 )]
+[node name="treeGreen_large7" parent="obstacles" index="23" instance=ExtResource( 6 )]
 
 position = Vector2( 80.4085, 191.464 )
 
-[node name="oilSpill_large" parent="obstacles" index="23" instance=ExtResource( 7 )]
+[node name="oilSpill_large" parent="obstacles" index="24" instance=ExtResource( 7 )]
 
 position = Vector2( 842.074, 66.6581 )
 
-[node name="oilSpill_large3" parent="obstacles" index="24" instance=ExtResource( 7 )]
+[node name="oilSpill_large3" parent="obstacles" index="25" instance=ExtResource( 7 )]
 
 position = Vector2( 470.696, 323.336 )
 scale = Vector2( 0.639708, 0.737164 )
 
-[node name="oilSpill_large2" parent="obstacles" index="25" instance=ExtResource( 7 )]
+[node name="oilSpill_large2" parent="obstacles" index="26" instance=ExtResource( 7 )]
 
 position = Vector2( 827.36, 452.239 )
 

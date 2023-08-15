@@ -110,7 +110,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
-[node name="bullet" type="Area2D" index="0" groups=[
+[node name="bullet" type="Area2D" groups=[
 "cannon_bullets",
 ]]
 
