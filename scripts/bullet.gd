@@ -1,6 +1,6 @@
 extends Area2D
 # class member variables go here
-const MAX_DIST = 250
+const MAX_DIST = 200
 
 var dir = Vector2(0,-1) setget set_dir
 var vel = 300
