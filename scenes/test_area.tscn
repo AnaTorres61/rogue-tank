@@ -284,7 +284,6 @@ polygon = PoolVector2Array( -23.1643, -17.9576, -23.1643, 9.18053, -14.3287, 18.
 
 [node name="cannon" type="Area2D" parent="turret_01" index="2"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -298,6 +297,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="sprite" type="Sprite" parent="turret_01/cannon" index="0"]
 
+rotation = 1.5708
 texture = ExtResource( 10 )
 offset = Vector2( -0.185455, -9.98534 )
 _sections_unfolded = [ "Transform" ]
