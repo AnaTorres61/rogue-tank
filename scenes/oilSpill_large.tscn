@@ -10,6 +10,7 @@ radius = 23.7393
 
 [node name="oilSpill_large" type="Area2D" index="0"]
 
+z_index = -1
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
