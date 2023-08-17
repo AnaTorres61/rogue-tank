@@ -31,7 +31,7 @@ radius = 22.3067
 custom_solver_bias = 0.0
 radius = 201.0
 
-[node name="test_area" type="Node"]
+[node name="test_area" type="Node" index="0"]
 
 [node name="ground" type="TileMap" parent="." index="0"]
 
@@ -285,6 +285,7 @@ polygon = PoolVector2Array( -23.1643, -17.9576, -23.1643, 9.18053, -14.3287, 18.
 
 [node name="cannon" type="Area2D" parent="turret_01" index="2"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -309,6 +310,7 @@ shape = SubResource( 3 )
 
 [node name="sensor" type="Area2D" parent="turret_01" index="3"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -323,8 +325,17 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 4 )
 
+[node name="Timer" type="Timer" parent="turret_01" index="4"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = false
+
 [connection signal="body_entered" from="turret_01/sensor" to="turret_01" method="_on_sensor_body_entered"]
 
 [connection signal="body_exited" from="turret_01/sensor" to="turret_01" method="_on_sensor_body_exited"]
+
+[connection signal="timeout" from="turret_01/Timer" to="turret_01" method="_on_Timer_timeout"]
 
 
