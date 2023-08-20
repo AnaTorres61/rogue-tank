@@ -5,6 +5,8 @@ var bodies = []
 var rot_vel = PI/2
 export(float, 0, 360) var start_rot = 0.0 setget set_start_rot
 
+export(float, 100, 1000) var sensor_radius = 100 setget set_sensor_radius
+
 const PRE_BULLET = preload("res://scenes/turret_01_bullet.tscn")
 
 func _ready():
@@ -24,6 +26,9 @@ func _process(delta):
 			
 func _draw():
 	$cannon.rotation = deg2rad(start_rot)
+	var new_shape = CircleShape2D.new()
+	new_shape.radius = sensor_radius
+	$sensor/shape.shape = new_shape
 
 
 func _on_sensor_body_entered(body):
@@ -47,10 +52,16 @@ func _on_shoot_timer_timeout():
 		var bullet = PRE_BULLET.instance()
 		bullet.global_position = global_position
 		bullet.dir = Vector2(cos($cannon.rotation), sin($cannon.rotation))
+		bullet.max_dist = sensor_radius
 		get_parent().add_child(bullet)
 
 
 func set_start_rot(val):
 	start_rot = val
+	if Engine.editor_hint:
+		update()
+		
+func set_sensor_radius(val):
+	sensor_radius = val
 	if Engine.editor_hint:
 		update()

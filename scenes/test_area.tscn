@@ -29,7 +29,7 @@ radius = 22.3067
 [sub_resource type="CircleShape2D" id=4]
 
 custom_solver_bias = 0.0
-radius = 201.0
+radius = 200.0
 
 [node name="test_area" type="Node" index="0"]
 
@@ -60,6 +60,7 @@ __meta__ = {
 
 [node name="Tank" parent="." index="1" instance=ExtResource( 2 )]
 
+editor/display_folded = true
 position = Vector2( 32.0955, 64.1058 )
 rotation = -0.00607844
 bodie = 4
@@ -258,6 +259,7 @@ position = Vector2( 827.36, 452.239 )
 
 [node name="turret_01" type="StaticBody2D" parent="." index="4"]
 
+editor/display_folded = true
 position = Vector2( 265.834, 259.017 )
 input_pickable = false
 collision_layer = 0
@@ -267,11 +269,11 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 script = ExtResource( 8 )
-_sections_unfolded = [ "Collision" ]
 __meta__ = {
 "_edit_group_": true
 }
-start_rot = 0.0
+start_rot = 270.0
+sensor_radius = 200.0
 
 [node name="sprite" type="Sprite" parent="turret_01" index="0"]
 
@@ -285,6 +287,8 @@ polygon = PoolVector2Array( -23.1643, -17.9576, -23.1643, 9.18053, -14.3287, 18.
 
 [node name="cannon" type="Area2D" parent="turret_01" index="2"]
 
+editor/display_folded = true
+rotation = 4.71239
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -330,6 +334,7 @@ _sections_unfolded = [ "Collision" ]
 [node name="shape" type="CollisionShape2D" parent="turret_01/sensor" index="0"]
 
 shape = SubResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="shoot_timer" type="Timer" parent="turret_01" index="4"]
 

@@ -1,6 +1,6 @@
 extends Area2D
 
-const MAX_DIST = 300
+var max_dist = 300
 
 var dir = Vector2() setget set_dir
 var vel = 400
@@ -11,7 +11,7 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	if global_position.distance_to(init_pos) >= MAX_DIST:
+	if global_position.distance_to(init_pos) >= max_dist:
 			queue_free()
 	
 	translate(dir * vel * delta)
