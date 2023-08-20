@@ -60,7 +60,6 @@ __meta__ = {
 
 [node name="Tank" parent="." index="1" instance=ExtResource( 2 )]
 
-editor/display_folded = true
 position = Vector2( 32.0955, 64.1058 )
 rotation = -0.00607844
 bodie = 4
@@ -285,7 +284,6 @@ polygon = PoolVector2Array( -23.1643, -17.9576, -23.1643, 9.18053, -14.3287, 18.
 
 [node name="cannon" type="Area2D" parent="turret_01" index="2"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -308,6 +306,13 @@ _sections_unfolded = [ "Transform" ]
 
 shape = SubResource( 3 )
 
+[node name="sight" type="RayCast2D" parent="turret_01/cannon" index="2"]
+
+enabled = false
+exclude_parent = true
+cast_to = Vector2( 200, 0 )
+collision_mask = 1
+
 [node name="sensor" type="Area2D" parent="turret_01" index="3"]
 
 editor/display_folded = true
@@ -325,10 +330,10 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 4 )
 
-[node name="Timer" type="Timer" parent="turret_01" index="4"]
+[node name="shoot_timer" type="Timer" parent="turret_01" index="4"]
 
 process_mode = 1
-wait_time = 0.5
+wait_time = 0.3
 one_shot = false
 autostart = false
 
@@ -336,6 +341,6 @@ autostart = false
 
 [connection signal="body_exited" from="turret_01/sensor" to="turret_01" method="_on_sensor_body_exited"]
 
-[connection signal="timeout" from="turret_01/Timer" to="turret_01" method="_on_Timer_timeout"]
+[connection signal="timeout" from="turret_01/shoot_timer" to="turret_01" method="_on_shoot_timer_timeout"]
 
 
