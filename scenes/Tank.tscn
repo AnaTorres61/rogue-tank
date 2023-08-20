@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/Tank.gd" type="Script" id=1]
 [ext_resource path="res://sprites/tankBody_dark.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://sprites/shotRed.png" type="Texture" id=4]
 [ext_resource path="res://sprites/shotLarge.png" type="Texture" id=5]
 [ext_resource path="res://sprites/shotOrange.png" type="Texture" id=6]
+[ext_resource path="res://scripts/destructible.gd" type="Script" id=7]
 
 [sub_resource type="Animation" id=1]
 
@@ -50,6 +51,12 @@ tracks/2/keys = {
 "values": [ true, false ]
 }
 
+[sub_resource type="CapsuleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 22.5978
+height = 4.37405
+
 [node name="Tank" type="KinematicBody2D" index="0"]
 
 z_index = 5
@@ -76,6 +83,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="barrel" type="Node2D" parent="." index="2"]
 
+editor/display_folded = true
 position = Vector2( 0, -0.540359 )
 _sections_unfolded = [ "Transform" ]
 
@@ -109,5 +117,28 @@ playback_speed = 2.0
 anims/fire = SubResource( 1 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
+
+[node name="damage_area" type="Area2D" parent="." index="3"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 32
+collision_mask = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 7 )
+_sections_unfolded = [ "Collision" ]
+health = 100
+
+[node name="shape" type="CollisionShape2D" parent="damage_area" index="0"]
+
+rotation = 1.5708
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="destroid" from="damage_area" to="." method="_on_damage_area_destroid"]
 
 

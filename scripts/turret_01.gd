@@ -31,6 +31,7 @@ func _draw():
 	var new_shape = CircleShape2D.new()
 	new_shape.radius = sensor_radius
 	$sensor/shape.shape = new_shape
+	$cannon/sight.cast_to.x = sensor_radius
 
 
 func _on_sensor_body_entered(body):
@@ -71,6 +72,7 @@ func set_sensor_radius(val):
 func _on_weak_spot_damage(damage, node):
 	life -= damage
 	if life <= 0:
+		set_process(false)
 		$cannon.queue_free()
 		$sensor.disconnect("body_exited",self,"on_sensor_body_exited")
 		$sensor.queue_free()

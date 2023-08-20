@@ -118,3 +118,8 @@ func set_barrel(val):
 	barrel = val
 	if Engine.editor_hint:
 		update()
+
+
+func _on_damage_area_destroid():
+	$damage_area.queue_free()
+	queue_free()

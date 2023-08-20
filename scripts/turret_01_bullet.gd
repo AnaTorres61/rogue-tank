@@ -19,3 +19,9 @@ func _physics_process(delta):
 func set_dir(val):
 	dir = val
 	rotation = dir.angle()
+
+
+func _on_turret_01_bullet_area_entered(area):
+	if area.has_method("hit"):
+		area.hit(5,self)
+		queue_free()
