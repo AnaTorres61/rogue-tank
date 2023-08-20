@@ -1,10 +1,11 @@
+tool
 extends StaticBody2D
 
 var bodies = []
-
 var rot_vel = PI/2
+export(float, 0, 360) var start_rot = 0.0 setget set_start_rot
 
-var PRE_BULLET = preload("res://scenes/turret_01_bullet.tscn")
+const PRE_BULLET = preload("res://scenes/turret_01_bullet.tscn")
 
 func _ready():
 	pass
@@ -20,6 +21,9 @@ func _process(delta):
 			var newBodyIndex =  bodies.find($cannon/sight.get_collider())
 			bodies[0] = $cannon/sight.get_collider()
 			bodies[newBodyIndex] = oldBody
+			
+func _draw():
+	$cannon.rotation = deg2rad(start_rot)
 
 
 func _on_sensor_body_entered(body):
@@ -44,3 +48,9 @@ func _on_shoot_timer_timeout():
 		bullet.global_position = global_position
 		bullet.dir = Vector2(cos($cannon.rotation), sin($cannon.rotation))
 		get_parent().add_child(bullet)
+
+
+func set_start_rot(val):
+	start_rot = val
+	if Engine.editor_hint:
+		update()

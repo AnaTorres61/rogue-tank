@@ -271,6 +271,7 @@ _sections_unfolded = [ "Collision" ]
 __meta__ = {
 "_edit_group_": true
 }
+start_rot = 0.0
 
 [node name="sprite" type="Sprite" parent="turret_01" index="0"]
 
