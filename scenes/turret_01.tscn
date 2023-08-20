@@ -1,0 +1,133 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/turret_01.gd" type="Script" id=1]
+[ext_resource path="res://sprites/enemy/towerDefense_tile228.png" type="Texture" id=2]
+[ext_resource path="res://sprites/enemy/towerDefense_tile250.png" type="Texture" id=3]
+[ext_resource path="res://scripts/weak_spot.gd" type="Script" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 22.3067
+
+[sub_resource type="CircleShape2D" id=4]
+
+custom_solver_bias = 0.0
+radius = 100.0
+
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 23.1076
+
+[node name="turret_01" type="StaticBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 0
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+start_rot = 0.0
+sensor_radius = 100
+
+[node name="sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="poly" type="CollisionPolygon2D" parent="." index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( -23.1643, -17.9576, -23.1643, 9.18053, -14.3287, 18.0162, 13.9139, 18.0162, 22.9074, 9.65387, 22.9074, -17.9576 )
+
+[node name="cannon" type="Area2D" parent="." index="2"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+collision_mask = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="sprite" type="Sprite" parent="cannon" index="0"]
+
+rotation = 1.5708
+texture = ExtResource( 3 )
+offset = Vector2( -0.185455, -9.98534 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="shape" type="CollisionShape2D" parent="cannon" index="1"]
+
+shape = SubResource( 1 )
+
+[node name="sight" type="RayCast2D" parent="cannon" index="2"]
+
+enabled = false
+exclude_parent = true
+cast_to = Vector2( 200, 0 )
+collision_mask = 1
+
+[node name="sensor" type="Area2D" parent="." index="3"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="shape" type="CollisionShape2D" parent="sensor" index="0"]
+
+shape = SubResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="shoot_timer" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 0.3
+one_shot = false
+autostart = false
+
+[node name="weak_spot" type="Area2D" parent="." index="5"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+collision_mask = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 4 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="shape" type="CollisionShape2D" parent="weak_spot" index="0"]
+
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="sensor" to="." method="_on_sensor_body_entered"]
+
+[connection signal="body_exited" from="sensor" to="." method="_on_sensor_body_exited"]
+
+[connection signal="timeout" from="shoot_timer" to="." method="_on_shoot_timer_timeout"]
+
+[connection signal="damage" from="weak_spot" to="." method="_on_weak_spot_damage"]
+
+

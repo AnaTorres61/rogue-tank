@@ -9,13 +9,15 @@ export(float, 100, 1000) var sensor_radius = 100 setget set_sensor_radius
 
 const PRE_BULLET = preload("res://scenes/turret_01_bullet.tscn")
 
+export var life = 100
+
 func _ready():
 	pass
 
 func _process(delta):
 	if bodies.size():
 		var angle = $cannon.get_angle_to(bodies[0].global_position)
-		if abs(angle) > .1: # abs tira sinal
+		if abs(angle) > .01: # abs tira sinal
 			$cannon.rotation += rot_vel * delta * sign(angle)
 	if $cannon/sight.is_colliding():
 		if $cannon/sight.get_collider() != bodies[0]:
@@ -65,3 +67,12 @@ func set_sensor_radius(val):
 	sensor_radius = val
 	if Engine.editor_hint:
 		update()
+
+func _on_weak_spot_damage(damage, node):
+	life -= damage
+	if life <= 0:
+		$cannon.queue_free()
+		$sensor.disconnect("body_exited",self,"on_sensor_body_exited")
+		$sensor.queue_free()
+		$shoot_timer.queue_free()
+		$weak_spot.queue_free()
