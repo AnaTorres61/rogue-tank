@@ -54,10 +54,10 @@ tracks/2/keys = {
 [sub_resource type="CapsuleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 22.5978
-height = 4.37405
+radius = 20.0806
+height = 1.16227
 
-[node name="Tank" type="KinematicBody2D" index="0"]
+[node name="Tank" type="KinematicBody2D"]
 
 z_index = 5
 input_pickable = false

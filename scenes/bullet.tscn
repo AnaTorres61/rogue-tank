@@ -124,11 +124,11 @@ collision_mask = 38
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="smoke" type="Particles2D" parent="." index="0"]
 
-position = Vector2( -5.36441, 2.28882e-005 )
+position = Vector2( -5.36441, 2.28882e-05 )
 emitting = true
 amount = 15
 lifetime = 0.3
