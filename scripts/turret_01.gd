@@ -75,8 +75,8 @@ func _on_weak_spot_damage(damage, node):
 	$hp_bar.scale = float(life) / float(init_life)
 	if life <= 0:
 		set_process(false)
-		$cannon.queue_free()
 		$sensor.disconnect("body_exited",self,"on_sensor_body_exited")
 		$sensor.queue_free()
+		$cannon.queue_free()
 		$shoot_timer.queue_free()
 		$weak_spot.queue_free()
