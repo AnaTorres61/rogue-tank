@@ -19,7 +19,7 @@ extents = Vector2( 833.478, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 621.596, 8.56023 )
 
-[node name="test_area" type="Node" index="0"]
+[node name="test_area" type="Node"]
 
 [node name="ground" type="TileMap" parent="." index="0"]
 
@@ -48,7 +48,6 @@ __meta__ = {
 
 [node name="Tank" parent="." index="1" instance=ExtResource( 2 )]
 
-editor/display_folded = true
 position = Vector2( 32.0955, 64.1058 )
 rotation = -0.00607844
 bodie = 4

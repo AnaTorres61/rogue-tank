@@ -10,6 +10,9 @@ const MAX_SPEED = 200
 var pre_bullet = preload("res://scenes/bullet.tscn")
 var acell = 0
 
+export var life = 100
+onready var init_life = life
+
 export(int, "bigRed", "blue", "dark", "darkLarge", "green", "huge", "red", "sand") var bodie = 2 setget set_bodie
 export(int, "dark1", "dark2", "dark3", "green1", "green2", "green3", "red1", "red2", "red3", "sand1", "sand2", "sand3") var barrel = 0 setget set_barrel
 
@@ -119,7 +122,9 @@ func set_barrel(val):
 	if Engine.editor_hint:
 		update()
 
-
-func _on_damage_area_destroid():
-	$damage_area.queue_free()
-	queue_free()
+func _on_damage_area_damage(damage, node):
+	life -= damage
+	$hp_bar.scale = float(life) / float(init_life)
+	if life <= 0:
+		$damage_area.queue_free()
+		queue_free()

@@ -9,7 +9,8 @@ export(float, 100, 1000) var sensor_radius = 100 setget set_sensor_radius
 
 const PRE_BULLET = preload("res://scenes/turret_01_bullet.tscn")
 
-export var life = 100
+export var life = 70
+onready var init_life = life
 
 func _ready():
 	pass
@@ -71,6 +72,7 @@ func set_sensor_radius(val):
 
 func _on_weak_spot_damage(damage, node):
 	life -= damage
+	$hp_bar.scale = float(life) / float(init_life)
 	if life <= 0:
 		set_process(false)
 		$cannon.queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/Tank.gd" type="Script" id=1]
 [ext_resource path="res://sprites/tankBody_dark.png" type="Texture" id=2]
@@ -6,7 +6,8 @@
 [ext_resource path="res://sprites/shotRed.png" type="Texture" id=4]
 [ext_resource path="res://sprites/shotLarge.png" type="Texture" id=5]
 [ext_resource path="res://sprites/shotOrange.png" type="Texture" id=6]
-[ext_resource path="res://scripts/destructible.gd" type="Script" id=7]
+[ext_resource path="res://scripts/weak_spot.gd" type="Script" id=7]
+[ext_resource path="res://scenes/hp_bar.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=1]
 
@@ -57,7 +58,7 @@ custom_solver_bias = 0.0
 radius = 20.0806
 height = 1.16227
 
-[node name="Tank" type="KinematicBody2D"]
+[node name="Tank" type="KinematicBody2D" index="0"]
 
 z_index = 5
 input_pickable = false
@@ -66,6 +67,7 @@ collision_mask = 6
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "Z Index" ]
+life = 100
 bodie = 2
 barrel = 0
 
@@ -83,7 +85,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="barrel" type="Node2D" parent="." index="2"]
 
-editor/display_folded = true
 position = Vector2( 0, -0.540359 )
 _sections_unfolded = [ "Transform" ]
 
@@ -120,6 +121,7 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="damage_area" type="Area2D" parent="." index="3"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -131,7 +133,6 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 7 )
 _sections_unfolded = [ "Collision" ]
-health = 100
 
 [node name="shape" type="CollisionShape2D" parent="damage_area" index="0"]
 
@@ -139,6 +140,13 @@ rotation = 1.5708
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[connection signal="destroid" from="damage_area" to="." method="_on_damage_area_destroid"]
+[node name="hp_bar" parent="." index="4" instance=ExtResource( 8 )]
+
+margin_left = -52.0
+margin_top = -35.0
+margin_right = 53.0
+margin_bottom = -26.0
+
+[connection signal="damage" from="damage_area" to="." method="_on_damage_area_damage"]
 
 
