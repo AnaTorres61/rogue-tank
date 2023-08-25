@@ -13,3 +13,4 @@ func on_area_hitted(damage, health, node):
 
 func on_area_destroid():
 	queue_free()
+	GAME.add_score(50)

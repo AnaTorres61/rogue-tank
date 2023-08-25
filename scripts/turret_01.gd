@@ -12,6 +12,8 @@ const PRE_BULLET = preload("res://scenes/turret_01_bullet.tscn")
 export var life = 70
 onready var init_life = life
 
+onready var game = get_node("/root/GAME")
+
 func _ready():
 	pass
 
@@ -80,3 +82,4 @@ func _on_weak_spot_damage(damage, node):
 		$cannon.queue_free()
 		$shoot_timer.queue_free()
 		$weak_spot.queue_free()
+		game.add_score(250)
